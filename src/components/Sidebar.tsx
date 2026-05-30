@@ -193,7 +193,7 @@ export default function Sidebar({
             {/* Locker */}
             <Pressable
               onPress={() => {
-                Alert.alert('Medlock Locker', 'This feature is for personal use only.');
+                Alert.alert('Medlock Locker', 'This feature is only for personal use .');
                 onNavigate('locker');
                 router.push('/locker');
                 onClose();
