@@ -224,7 +224,13 @@ export default DashboardScreen;
 
 // --- STYLESHEET ---
 const styles = StyleSheet.create({
-  container: { flex: 1, paddingVertical: 16 },
+  // Added paddingHorizontal here to create the side margins
+  container: { 
+    flex: 1, 
+    paddingVertical: 16, 
+    paddingHorizontal: 16 
+  },
+  
   statsRow: { flexDirection: 'row', gap: 12, marginBottom: 24 },
   statCard: { flex: 1, borderRadius: 16, borderWidth: 1, padding: 12, alignItems: 'center' },
   statIconContainer: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center', marginBottom: 8 },
