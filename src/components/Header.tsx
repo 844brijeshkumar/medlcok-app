@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import { Bell, Filter, Menu, Search, X } from 'lucide-react-native';
 import { useState } from 'react';
 import {
@@ -17,15 +18,18 @@ interface HeaderProps {
   user: UserProfile;
   onMenuToggle: () => void;
   onFilterToggle?: () => void;
+  onNotificationToggle?: () => void;
   isFilterActive?: boolean;
 }
 
 export default function Header({
   user,
   onMenuToggle,
+  onNotificationToggle,
   onFilterToggle,
   isFilterActive = false,
 }: HeaderProps) {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -51,7 +55,10 @@ export default function Header({
         </Text>
 
         <View style={styles.actionsContainer}>
-          <Pressable style={styles.iconButton}>
+          <Pressable 
+            style={styles.iconButton}
+            onPress={onNotificationToggle}
+          >
             <Bell size={20} color="#00478d" />
             <View style={styles.notificationDot} />
           </Pressable>
